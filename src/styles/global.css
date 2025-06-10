@@ -1,0 +1,20 @@
+ body {
+    display: flex;
+    flex-direction:column;
+    background-color:rgb(40, 40, 40);
+    justify-content: center;
+    align-items:center;
+    height:1000px;
+}
+
+.box1 {
+    background-color:lightgreen;
+    height:50px;
+    width:50px;
+    border-radius:7px;
+    margin:40px;
+}
+
+* {
+    font-family:gilroy;
+}
