@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css"
+const arr = [42, 17, 63, 91, 34, 27];
+
 ---
 
 <html lang="en">
@@ -11,9 +13,12 @@ import "../styles/global.css"
 		<title>GSAP Practice</title>
 	</head>
 	<body>
-			<div class = "box"></div>
-			<div class = "box"></div>
-			<div class = "box"></div>
+		<p style = "margin-right:20px; color:white; font-weight:bold; font-family:Arial" id = "i_count">i = 0</p>
+		<div class = "div1">
+			{arr.map((item,index) => (
+			<div class = {'box'+index} >{item}</div>
+				))}
+		</div>
 	</body>
 	<script src="../scripts/script.js"/>
 </html>
