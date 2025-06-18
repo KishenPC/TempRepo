@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
       mergeSort(arr);
     }
   });
+  
 });
 
 function renderBoxes(array) {
@@ -72,7 +73,7 @@ async function renderNextRecurRight(part) {
         
         gsap.from(`#c${boxCount} div`, {
             opacity: 0,
-            x: 100,
+            x: x_off + 50*(part.length),
             duration: 0.5,
             stagger: 0.1,
             onComplete: resolve
@@ -99,13 +100,14 @@ async function renderNextRecurLeft(part) {
         
         gsap.from(`#c${boxCount} div`, {
             opacity: 0,
-            x: -100,
+            x: x_off - 50*(part.length),
             duration: 0.5,
             stagger: 0.1,
             onComplete: resolve
         });
 
         lastContainer = container;
+        boxCount++;
     });
 }
 
@@ -119,41 +121,41 @@ async function mergeSort(arr) {
   const leftHalf = arr.slice(0, mid);
   const rightHalf = arr.slice(mid);
 
-  renderNextRecurLeft(leftHalf);
-
-  renderNextRecurRight(rightHalf);
+  await Promise.all([
+    renderNextRecurLeft(leftHalf),
+    renderNextRecurRight(rightHalf)
+  ]);
 
   const sortedLeft = mergeSort(leftHalf);
-
   const sortedRight = mergeSort(rightHalf);
 
   return merge(sortedLeft, sortedRight);
 }
 
-// function merge(left, right) {
-//   let result = [];
-//   let leftIndex = 0;
-//   let rightIndex = 0;
+function merge(left, right) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-//   while (leftIndex < left.length && rightIndex < right.length) {
-//     if (left[leftIndex] < right[rightIndex]) {
-//       result.push(left[leftIndex]);
-//       leftIndex++;
-//     } else {
-//       result.push(right[rightIndex]);
-//       rightIndex++;
-//     }
-//   }
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
 
-//   while (leftIndex < left.length) {
-//     result.push(left[leftIndex]);
-//     leftIndex++;
-//   }
+  while (leftIndex < left.length) {
+    result.push(left[leftIndex]);
+    leftIndex++;
+  }
 
-//   while (rightIndex < right.length) {
-//     result.push(right[rightIndex]);
-//     rightIndex++;
-//   }
+  while (rightIndex < right.length) {
+    result.push(right[rightIndex]);
+    rightIndex++;
+  }
 
-//   return result;
-// }
+  return result;
+}
