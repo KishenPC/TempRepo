@@ -1,35 +1,19 @@
 #total {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensures it at least fills the viewport height */
+    width: 100%; /* Takes full width */
+    margin: 0;
+    padding: 30px;
 }
 
 #data-layout {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    grid-auto-rows: 300px; 
-    gap: min(50px, 5vw);
-    padding: 10px;
-    max-width: 100%;
-    margin-top:100px;
-}
-
-#header-block {
-    margin-top:200px;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-}
-
-#logo {
-    width:280px;
-}
-
-#header-text {
-    margin-top:40px;
-    text-align: center;
-    width:400px;
-    color:white;
-    font-family:Poppins;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: min(3vw, 200px);
+    place-items: center;
 }
 
 .slot {
@@ -37,22 +21,48 @@
   display: flex;
   flex-direction:column;
   align-items: center;
-  justify-content: center;
-  height: 300px;
-  width: 250px;
+  justify-content: space-between;
   opacity: 0.5;
-  padding:0px 10px;
+  aspect-ratio:391/475;
+  min-width:250px;
+
+  padding:10px;
 
   border: 2px solid transparent; /* Required for gradient border */
-  border-radius: 20px;
+  border-radius: min(2.5vw, 2.5vh);
   background: 
-    linear-gradient(rgb(27, 27, 47), rgb(42, 42, 52)) padding-box, /* Solid inner fill */
+    linear-gradient(#1E203C, #30334B) padding-box, /* Solid inner fill */
     linear-gradient(
       135deg,
-      rgba(158, 157, 218, 0.5) 0%,
-      rgba(18, 18, 21, 0.5) 50%,
-      rgba(158, 157, 218, 0.5) 100%
+      #6E5FCB 0%,
+      #24233780 50%,
+      #6E5FCB 100%
     ) border-box; /* Gradient only in border area */
+}
+
+
+#header-block {
+    margin-top:5vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:90vw;
+}
+
+#tf-logo {
+    width:50vw;
+}
+
+#header-text {
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-top:100px;
+    color:white;
+    font-family:Poppins;
+    font-weight: 400;
+    text-align: center;
+
+    font-size: 3vw;
 }
 
 .data-desc {
@@ -63,20 +73,24 @@
 }
 
 .explore-button {
-    width:80%;
+    width:90%;
+    height:10%;
+
     background:
     linear-gradient(
         180deg,
-        rgba(37, 37, 52, 0.8),
-        rgba(140, 140, 140, 0.7) 100%
+        #6D35E5 0%,
+        #170F35 100%
     ) padding-box;
-    padding:10px;
-    border-radius:10px;
+    padding: min(1vw, 1vh) ;
+    border-radius: min(1.5vw, 1.5vh);
     text-align:center;
     color:white;
     
     font-family:Poppins;
-    font-weight:bold
+    font-weight:bold;
+
+    margin:10px 15px;
 }
 
 #explore-div {
@@ -87,25 +101,33 @@
     margin-top:50px;
 }
 
-#explore-button {
-    height:40px;
-    border-radius:20px;
+#explore-algo {
+    aspect-ratio:391/98;
+    padding: 2vw;
+    border-radius:100px;
     border:none;
-    width: 200px;
-    font-family:Poppins;
-    font-size:15px;
-    color:white;
     background: linear-gradient(
         180deg,
         rgb(109, 53, 229) 0%,
         #170F35 100%
     );
 
-    margin: 0; /* Remove any default margins */
+    color:white;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: min(3vw, 3vh); /* Font scales with viewport */
+    text-align: center;
 }
 
 #choose-div {
     margin-top:60px;
     text-align: center;
-    font-size:40px
+}
+
+#choose-text {
+    color:white;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: min(5vw,400%);
+    text-shadow: 0px 5px 0px rgba(103, 69, 235, 1);
 }

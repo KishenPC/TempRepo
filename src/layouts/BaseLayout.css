@@ -2,7 +2,7 @@
     display:flex;
     justify-content: center;
     vertical-align:center;
-    background-color:rgb(20, 20, 33);
+    background-color:#0C0C1A;
     height:2000px;
 }
 
@@ -29,3 +29,5 @@
 .bg-layer-2 {
   top:-150px
 }
+
+
