@@ -1,24 +1,71 @@
 ---
-import "../styles/global.css"
-const arr = [42, 17, 63, 91, 34, 27];
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import "../styles/main.css"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>GSAP Practice</title>
-	</head>
-	<body>
-		<p style = "margin-right:20px; color:white; font-weight:bold; font-family:Arial" id = "i_count">i = 0</p>
-		<div class = "div1">
-			{arr.map((item,index) => (
-			<div class = {'box'+index} >{item}</div>
-				))}
+<BaseLayout>
+	<div id = "total">
+		<div id = "header-block">
+			<img id = "logo" src = "../../public/TraceFlow.svg">
+			<p id = "header-text">
+				Understand data structures and algorithms through interactive visualizations with beautiful animations and step-by-step execution
+			</p>
 		</div>
-	</body>
-	<script src="../scripts/script.js"/>
-</html>
+
+		<div id = 'explore-div'>
+			<button id = "explore-button">
+				EXPLORE ALGORITHM
+			</button>
+		</div>
+
+		<div id = "choose-div">
+			<p id = "choose-data">
+				CHOOSE A DATA STRUCTURE
+			</p>
+		</div>
+
+		<div id = "data-layout">
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+			<div class = "slot">
+				<img src="../../public/Group 111.png">
+				<p class = "data-desc">
+					Visualize array, sorting algorithms and searching techniquesfqewnjjewv
+				</p>
+				<a class = "explore-button">Explore Array</a>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

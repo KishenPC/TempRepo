@@ -1,0 +1,22 @@
+---
+import "../styles/mergeSort.css"
+
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+
+<BaseLayout>
+    	<div class = "div0">
+			<div id = "header-box">Merge Sort</div>
+			<div id = "buttons">
+				<div><input id = "input" placeholder = "Limit: 10 Elements"></div>
+				<div><button class = "button" id = "set">Set</button></div>
+				<div><button class = "button" id = "play">Play</button></div>
+			</div>
+			<div id = "visualization">
+				<div class = "box-container" id = "c0"></div>
+			</div>
+		</div>
+
+		<script src="../scripts/mergeSort.js"/>
+</BaseLayout>

@@ -1,0 +1,113 @@
+ body {
+    display:flex;
+    justify-content: center;
+    vertical-align:center;
+    background-color:rgb(32, 27, 33);
+    height:3000px;
+}
+
+.div1 {
+    display:flex;
+    flex-direction:row;
+}
+
+.div1 * {
+    font-family:Poppins;
+
+    background-color: rgb(155, 165, 250);
+    height:50px;
+    width:fit-content;
+    border-radius:7px;
+    margin:5px;
+    padding:0px 5px;
+    text-align:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+    font-family: Tahoma;
+    font-size:30px;
+    color: rgb(40,40,40);  
+
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+.div2 {
+    display:flex;
+}
+
+.div0 {
+    position:relative;
+    display:grid;
+    place-items:center;
+    place-content:center;
+}
+
+#buttons {
+    display:flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom:50px;
+}
+
+#input {
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    transition: box-shadow 0.3s, background-color 0.3s
+}
+
+#input:hover {
+    cursor:text;
+    box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.7);
+    background-color:rgb(240, 240, 240)
+}
+
+#next {
+    padding:5px 10px;
+    border:none;
+    border-radius: 20px;
+    font-size:20px;
+}
+
+#previous {
+    padding: 5px 10px;
+    border:none;
+    border-radius:20px;
+    font-size:20px;
+}
+
+
+.button {
+    transition: background-color 0.15s, box-shadow 0.15s;
+    padding:10px;
+    border:none;
+    border-radius:20px;
+}
+
+.button:active {
+    box-shadow: 3px 3px 4px inset rgba(0,0,0,0.5);
+}
+
+* {
+    font-family:Poppins;
+    font-weight:bold;
+}
+
+.P {
+    margin-right:20px; 
+    color:white; 
+    font-weight:bold; 
+    font-family:Arial;
+    
+}
+
+#i_count {
+    display:inline-block;
+}
+
+#details {
+    color:white;
+}

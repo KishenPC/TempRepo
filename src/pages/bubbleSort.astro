@@ -1,0 +1,24 @@
+---
+import "../styles/bubbleSort.css"
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+		<div class = "div0">
+			<div id = "buttons">
+				<div><input id = "input" placeholder = "Eg: 1,4,3,2,9"></div>
+				<div><button class = "button" id = "set">Set</button></div>
+				<div><button class = "button" id = "previous">🠔</button></div>
+				<div><button class = "button" id = "next">🠖</button></div>
+				<div><button class = "button" id = "play">Play</button></div>
+			</div>
+			<p class = "P" id = "i_count">i = 0</p>
+			<div class="div1" id="box-container"></div>
+			<div class = "div2">
+				<p class = "P" id = "j_count">j = 0</p>
+			</div>
+			<p id = "details"></p>
+		</div>
+
+		<script src="../scripts/bubbleSort.js"/>
+</BaseLayout>
