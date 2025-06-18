@@ -104,9 +104,20 @@ function animateSwap(el1, el2) {
     const currentWidth1 = parseFloat(getComputedStyle(el1).width);
     const currentWidth2 = parseFloat(getComputedStyle(el2).width);
 
-    const x1 = el1.offsetLeft+currentWidth1/2;
-    const x2 = el2.offsetLeft+currentWidth2/2;
-    const delta = x2 - x1;
+    const x1 = el1.offsetLeft;
+    const x2 = el2.offsetLeft;
+
+    // The function asw as x3 and x4 is used to compute the appropriate new position for el1
+    function getOffsetRight(element) {
+      return element.parentElement.offsetWidth - (element.offsetLeft + element.offsetWidth);
+    }
+    const x3 = getOffsetRight(el1);
+    const x4 = getOffsetRight(el2);
+
+    const deltal = x2 - x1;
+    const deltar = x3 - x4;
+    // this is because the width of the element boxes can vary
+    // hence repositioning based on mid point of box may be inadequate
 
     var tl = gsap.timeline()
 
@@ -120,17 +131,17 @@ function animateSwap(el1, el2) {
     });
 
     tl.to(el2, {
-    y: -delta,
+    y: -60,
     delay:0.75
     });
 
     tl.to(el1, {
-    x: delta,
+    x: deltar,
     duration: 0.75,
     });
 
     tl.to(el2, {
-    x: -delta,
+    x: -deltal,
     duration: 0.75,
     }, "<" );
 
