@@ -1,0 +1,68 @@
+---
+import {setArray} from "../cache/dataCache.ts"
+---
+
+<div style = "margin-top:10px;">
+    <label for = "#input" id = "input-label">
+        Enter Elements: 
+    </label>
+    <input 
+        id = "inpt"
+        type="text" 
+        placeholder=""
+    />
+    <button id = "btn">
+        Set
+    </button>
+</div>
+
+<style>
+    #input-label {
+        color: #FFF;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right:10px;
+    }
+
+    #inpt {
+        color:white;
+        font-weight:normal;
+        width:min(20vw, 500px);
+        height:min(27px, 10vh);
+        min-height:20px;
+        border-radius:5px;
+        background: linear-gradient(147deg, rgba(30, 32, 60, 0.60) 12.78%, rgba(48, 51, 75, 0.60) 91.88%);
+        backdrop-filter: blur(2px);
+        outline:none;
+        transition: box-shadow 0.2s;
+        padding-left:10px;
+    }
+
+    #inpt:focus {
+        box-shadow: 2px 2px 3px inset rgba(0,0,0,0.5)
+    }
+
+    #btn {
+        height:min(27px, 10vh);
+        min-height:20px;
+        border-radius:5px;
+        color:white;
+        font-size:0.8rem;
+        padding:1.5px 10px;
+        background: linear-gradient(180deg, #6D35E5 0%, #170F35 100%);
+        margin-left:10px;
+    }
+</style>
+
+<script type="module">
+    document.getElementById("btn").addEventListener("click", () => {
+        var inputValue = document.getElementById("inpt").value;
+        const array = inputValue.split(",").map(Number).filter(x => !isNaN(x));
+        setArray(array);
+        renderBoxes();
+    });
+
+</script>
+

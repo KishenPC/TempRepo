@@ -1,8 +1,16 @@
 ---
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
+
+import Input from "../components/input.astro"
+import ArrayContainer from '../components/arrayContainer.astro';
+
 ---
 
 <Layout>
-
+    <div style = "display:flex; flex-direction:column; align-items:center;">
+        <Input/>
+        <ArrayContainer/>
+    </div>
 </Layout>
+

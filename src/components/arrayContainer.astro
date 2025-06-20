@@ -1,0 +1,46 @@
+---
+import "../styles/arrayContainer.css";
+
+import { getArray } from "../cache/dataCache";
+const arr = getArray();
+const jsonData = JSON.stringify(arr);
+---
+
+
+<div>
+    <div id = "i-container">
+        
+    </div>
+        <div id = "box-container">
+            
+        </div>
+</div>
+
+<script type="module">
+
+    function renderBoxes() {
+        const boxContainer = document.getElementById("box-container");
+        const iContainer = document.getElementById("i-container");
+
+        boxContainer.innerHTML = "";
+        iContainer.innerHTML = "";
+
+        array.forEach((val, index) => {
+            const div = document.createElement("div");
+            div.className = `box${index}`;
+            div.textContent = val;
+            boxContainer.appendChild(div);
+
+            const iCount = document.createElement("div");
+            iCount.className = `index${index}`;
+            iCount.textContent = "i=" + index;
+            iContainer.appendChild(iCount);
+        });
+        
+        gsap.to("#box-container *", {
+            x:200,
+            stagger:1,
+            duration:4,
+        })
+        }
+</script>
